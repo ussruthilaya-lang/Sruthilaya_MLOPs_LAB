@@ -11,7 +11,7 @@ While building and deploying this project, I learned the following key points:
 
 - Imports that work locally can fail inside Docker if the project structure is not treated as a proper Python package. Using absolute, package-based imports and adding __init__.py files is necessary.
 
-- Separating the backend (model inference) and frontend (dashboard) makes the system easier to deploy, debug, and scale.
+- Separating the backend and frontend makes the system easier to deploy, debug, and scale.
 
 ## Changes made based on these learnings
 
@@ -40,7 +40,7 @@ These changes were made to ensure the application runs reliably in a cloud envir
 
 - Docker installed (optional for local testing)
 
-Replace [PROJECT_ID] with the actual project ID (for example mlops-labs-485900).
+Replace [PROJECT_ID] with the actual project ID.
 
 ### Deploying the backend (FastAPI)
 
@@ -49,7 +49,6 @@ This deploys the trained flower classification model as a web API.
 From the backend project directory (the folder containing the Dockerfile):
 
 gcloud builds submit --tag gcr.io/[PROJECT_ID]/flower-api
-
 
 After the build succeeds, deploy to Cloud Run:
 
@@ -73,11 +72,9 @@ Update the backend URL reference:
 
 FASTAPI_BACKEND_ENDPOINT = os.getenv("FASTAPI_URL", "https://flower-api-xyz.a.run.app")
 
-
 Build and deploy the dashboard:
 
 gcloud builds submit --config cloudbuild_dashboard.yaml .
 gcloud run deploy flower-dashboard --image gcr.io/[PROJECT_ID]/flower-dashboard --platform managed --region us-central1 --allow-unauthenticated --port 8080
-
 
 Open the dashboard URL shown after deployment to use the application.
