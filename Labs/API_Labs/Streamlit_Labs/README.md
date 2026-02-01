@@ -10,14 +10,6 @@ All ML logic lives in the backend.
 
 While deploying to Cloud Run, I realized keeping model logic in the UI causes unnecessary issues. So I made Streamlit a thin layer that just sends inputs and shows results.
 
-This made the setup:
-
-simpler
-
-easier to debug
-
-consistent between local and cloud runs
-
 ### How it works
 
 User inputs the four flower features using sliders.
@@ -35,7 +27,6 @@ Streamlit just displays this data along with images.
 Start the FastAPI backend:
 
 uvicorn main:app --reload
-
 
 Runs at http://127.0.0.1:8000
 
@@ -57,9 +48,3 @@ FASTAPI_BACKEND_ENDPOINT = os.getenv(
 
 
 When deployed, this is replaced with the Cloud Run URL.
-
-### Summary
-
-Streamlit is only the UI.
-FastAPI handles the model.
-Nothing ML-related runs in the dashboard.
