@@ -2,8 +2,6 @@
 
 - How to load a dataset, split it into training and testing sets, and train a basic ML model.
 
-- How to serialize a trained sklearn model and reuse it for inference.
-
 - How to expose a model through a FastAPI endpoint.
 
 - How request handling and routing works in FastAPI.
@@ -11,7 +9,7 @@
 These steps established the basic end-to-end flow from data → model → API.
 
 # Improvements I Made & Why
-## Model Training (train.py)
+## Model Training (train_v2.py)
 
 - Constrained the Decision Tree (max_depth=3) to avoid overfitting on a small dataset.
 
@@ -22,7 +20,7 @@ These steps established the basic end-to-end flow from data → model → API.
 Why:
 Keeps training reproducible, explainable, and robust to different execution contexts.
 
-## Prediction Logic (predict.py)
+## Prediction Logic (predict_v2.py)
 
 - Loaded the model once at module level instead of reloading it per request.
 
