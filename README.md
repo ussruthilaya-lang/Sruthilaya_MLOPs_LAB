@@ -25,3 +25,33 @@ The goal of this lab was to understand end-to-end API-based model serving and re
 - Deployed the backend to Google Cloud Run using Cloud Build
 
 - Built a Streamlit dashboard as a thin client for the API
+
+# Lab 2 – Airflow ML Pipeline
+
+- Course: MLOps
+- Lab: Airflow Labs
+- Submission Date: 14 Feb 2026
+
+## Overview
+
+In this lab, I worked on building and modifying an Airflow DAG that runs a machine learning pipeline using clustering on customer credit card data.
+
+## What was implemented
+
+The pipeline basically:
+
+- Loads dataset
+
+- Preprocesses data
+
+- Trains clustering model
+
+- Finds optimal number of clusters
+
+- Saves model
+
+- Loads model and predicts
+
+But during the lab, I realised some architectural issues in the original workflow and I improved them.
+
+This lab helped me understand how ML pipelines actually work inside orchestration tools like Airflow.
