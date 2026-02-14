@@ -11,3 +11,4 @@ logs/
 *.log
 airflow-webserver.pid
 airflow-worker.pid
+model/
