@@ -29,7 +29,7 @@ The goal of this lab was to understand end-to-end API-based model serving and re
 # Lab 2 – Airflow ML Pipeline
 
 - Course: MLOps
-- Lab: Airflow Labs (FastAPI + Streamlit)
+- Lab: Airflow Labs
 - Submission Date: 14 Feb 2026
 
 ## Overview
@@ -40,17 +40,17 @@ In this lab, I worked on building and modifying an Airflow DAG that runs a machi
 
 The pipeline basically:
 
-Loads dataset
+- Loads dataset
 
-Preprocesses data
+- Preprocesses data
 
-Trains clustering model
+- Trains clustering model
 
-Finds optimal number of clusters
+- Finds optimal number of clusters
 
-Saves model
+- Saves model
 
-Loads model and predicts
+- Loads model and predicts
 
 But during the lab, I realised some architectural issues in the original workflow and I improved them.
 
